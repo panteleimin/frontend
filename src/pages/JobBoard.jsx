@@ -86,7 +86,7 @@ export default function JobBoard({ user }) {
 
       {showForm && (
         <form onSubmit={handleCreateOrder} style={{ background: '#1e293b', padding: '20px', borderRadius: '12px', marginBottom: '30px' }}>
-          <h3 style={{ margin: '0 0 15px 0' }}>New order</h3>
+          <h3 style={{ color: 'white', margin: '0 0 15px 0' }}>New order</h3>
           
           <input 
             type="text" placeholder="What do you need to model? (Example: 3D model of a sword)" 
@@ -100,7 +100,7 @@ export default function JobBoard({ user }) {
             style={{ width: '95%', padding: '10px',  marginBottom: '15px', borderRadius: '6px', border: '1px solid #334155', background: '#0f172a', color: 'white' }}
           />
           
-          <div style={{ display: 'flex', alignItems: 'center', gap: '15px', marginBottom: '20px' }}>
+          <div style={{ color: 'white', display: 'flex', alignItems: 'center', gap: '15px', marginBottom: '20px' }}>
             <label>How many days do you allow for completion?</label>
             <input 
               type="number" min="1" max="30" value={days} onChange={e => setDays(e.target.value)} required
