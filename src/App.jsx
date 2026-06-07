@@ -16,6 +16,7 @@ import UserPage from './pages/UserPage';
 import Footer from './pages/Footer';
 import JobBoard from './pages/JobBoard';
 import { User, House, Sun, Moon, LogOut, LogIn, Users, Earth, Briefcase } from 'lucide-react';
+import axios from 'axios';
 
 axios.defaults.baseURL = process.env.REACT_APP_API_URL;
 
