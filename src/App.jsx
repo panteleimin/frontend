@@ -55,7 +55,7 @@ function AppContent() {
           <input 
             type="text" 
             className="search-input"
-            placeholder="Searching for models..." 
+            placeholder="Searching..." 
             value={search}
             onChange={(e) => setSearch(e.target.value)}
           />
