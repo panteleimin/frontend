@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { useParams, Link } from 'react-router-dom';
-import { div } from 'three/src/nodes/math/OperatorNode.js';
+import { Link } from 'react-router-dom';
 
 export default function AllUsers({ search }) {
   const [users, setUsers] = useState([]);

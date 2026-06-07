@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import ModelViewer from '../ModelViewer';
-import { User, Bookmark, Grid, Briefcase, Upload, Download, CheckCircle, Clock } from 'lucide-react';
+import { Bookmark, Grid, Briefcase, Upload, Download, CheckCircle, Clock } from 'lucide-react';
 
 export default function ProfilePage({ user }) {
   const [myModels, setMyModels] = useState([]);
