@@ -18,15 +18,15 @@ export default function ProfilePage({ user }) {
     if (user) {
       const userId = user.userId || user._id; 
 
-      axios.get(`http://localhost:5000/api/models?userId=${userId}`)
+      axios.get(`/api/models?userId=${userId}`)
         .then(res => setMyModels(res.data))
         .catch(err => console.error("Error (own):", err));
 
-      axios.get(`http://localhost:5000/api/users/${userId}/saved-models`)
+      axios.get(`/api/users/${userId}/saved-models`)
         .then(res => setSavedModels(res.data))
         .catch(err => console.error("Error (saved):", err));
 
-      axios.get(`http://localhost:5000/api/users/${userId}/my-orders`)
+      axios.get(`/api/users/${userId}/my-orders`)
         .then(res => setMyOrders(res.data))
         .catch(err => console.error("Помилка (замовлення):", err));
     }
@@ -36,7 +36,7 @@ export default function ProfilePage({ user }) {
     const isconfirm = window.confirm('Are you sure about deleting?');
     if (isconfirm){
       try{
-        await axios.delete(`http://localhost:5000/api/models/${modelid}`);
+        await axios.delete(`/api/models/${modelid}`);
         setMyModels(prev => prev.filter(m => m._id !== modelid));
       } 
       catch(err) {
@@ -56,12 +56,11 @@ export default function ProfilePage({ user }) {
     if (fbxFile) formData.append('fbxOrderFile', fbxFile);
 
     try {
-      const res = await axios.put(`http://localhost:5000/api/orders/${orderId}/complete`, formData, {
+      const res = await axios.put(`/api/orders/${orderId}/complete`, formData, {
         headers: { 'Content-Type': 'multipart/form-data' }
       });
       
       alert("Роботу успішно здано!");
-      // Оновлюємо статус замовлення в локальному стейті, щоб кнопка зникла
       setMyOrders(prev => prev.map(o => o._id === orderId ? res.data.order : o));
       setGlbFile(null);
       setFbxFile(null);
@@ -82,7 +81,7 @@ export default function ProfilePage({ user }) {
       
       <div style={{ display: 'flex', alignItems: 'center', gap: '20px', marginBottom: '30px' }}>
         {user.icon ? (
-          <img src={`http://localhost:5000${user.icon}`} alt="Avatar" style={{ width: '100px', height: '100px', borderRadius: '50%', objectFit: 'cover' }} />
+          <img src={`https://threedhub-backend.onrender.com${user.icon}`} alt="Avatar" style={{ width: '100px', height: '100px', borderRadius: '50%', objectFit: 'cover' }} />
         ) : (
           <div style={{ width: '100px', height: '100px', borderRadius: '50%', background: '#616161', display: 'flex', justifyContent: 'center', alignItems: 'center' }}/>
         )}
@@ -153,7 +152,7 @@ export default function ProfilePage({ user }) {
                   <h3 style={{ margin: '0 0 10px 0', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>{m.title}</h3>
               
                   <div style={{ height: '200px', backgroundColor: '#000', borderRadius: '8px', marginBottom: '10px' }}>
-                    <ModelViewer url={`http://localhost:5000${m.fileUrl}`} />
+                    <ModelViewer url={`https://threedhub-backend.onrender.com${m.fileUrl}`} />
                   </div>
               
                   <div style={{display: 'flex', justifyContent: 'space-between'}}>
@@ -234,12 +233,12 @@ export default function ProfilePage({ user }) {
                       
                       <div style={{ marginLeft: 'auto', display: 'flex', gap: '10px' }}>
                         {order.glbFileUrl && (
-                          <a href={`http://localhost:5000${order.glbFileUrl}`} download>
+                          <a href={`https://threedhub-backend.onrender.com${order.glbFileUrl}`} download>
                             <button style={{ display: 'flex', alignItems: 'center', gap: '5px', background: '#475569', color: 'white', border: 'none', padding: '6px 12px', borderRadius: '5px', cursor: 'pointer' }}><Download size={14}/> .glb</button>
                           </a>
                         )}
                         {order.fbxFileUrl && (
-                          <a href={`http://localhost:5000${order.fbxFileUrl}`} download>
+                          <a href={`https://threedhub-backend.onrender.com${order.fbxFileUrl}`} download>
                             <button style={{ display: 'flex', alignItems: 'center', gap: '5px', background: '#475569', color: 'white', border: 'none', padding: '6px 12px', borderRadius: '5px', cursor: 'pointer' }}><Download size={14}/> .fbx</button>
                           </a>
                         )}

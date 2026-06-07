@@ -8,7 +8,7 @@ export default function ModelProfile() {
   const [model, setModel] = useState(null);
 
   useEffect(() => {
-    axios.get(`http://localhost:5000/api/models/${id}`)
+    axios.get(`/api/models/${id}`)
       .then(res => setModel(res.data))
       .catch(err => console.error("Error loading model profile:", err));
   }, [id]);
@@ -22,7 +22,7 @@ export default function ModelProfile() {
         <div style={{ padding: '30px', display: 'flex', flexDirection: 'column', gap: '30px' }}>
           <div style={{ height: '550px', background: '#000', borderRadius: '12px', overflow: 'hidden', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
             {model?.fileUrl ? (
-              <ModelViewer url={`http://localhost:5000${model.fileUrl}`} />
+              <ModelViewer url={`https://threedhub-backend.onrender.com${model.fileUrl}`} />
             ) : (
               <h2 style={{ color: '#ef4444' }}>3D model file is missing</h2>
             )}
@@ -37,7 +37,7 @@ export default function ModelProfile() {
           </div>
           {model?.fileUrl && (
             <a 
-              href={`http://localhost:5000${model.fileUrl}`} 
+              href={`https://threedhub-backend.onrender.com${model.fileUrl}`} 
               download
               style={{
                 display: 'block', textAlign: 'center', padding: '16px', borderRadius: '12px',

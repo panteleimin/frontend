@@ -19,7 +19,7 @@ export default function UploadPage({ user }) {
     formData.append('userId', user.userId); 
 
     try {
-      await axios.post('http://localhost:5000/api/models', formData);
+      await axios.post('/api/models', formData);
       alert('The model has been successfully loaded!');
       navigate('/profile');
     } catch (err) {

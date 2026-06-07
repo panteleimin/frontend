@@ -10,14 +10,14 @@ export default function UserPage() {
   const [error, setError] = useState(false);
 
   useEffect(() => {
-    axios.get(`http://localhost:5000/api/user/${id}`)
+    axios.get(`/api/user/${id}`)
       .then(res => setViewUser(res.data))
       .catch(err => {
         console.error("User not found:", err);
         setError(true);
       });
 
-    axios.get(`http://localhost:5000/api/models?userId=${id}`)
+    axios.get(`/api/models?userId=${id}`)
       .then(res => setUserModels(res.data))
       .catch(err => console.error("Error loading models:", err));
   }, [id]);
@@ -31,7 +31,7 @@ export default function UserPage() {
       <div style={{ display: 'flex', alignItems: 'center', gap: '20px', marginBottom: '20px', padding: '20px'}}>
         {viewUser.icon ? (
           <img 
-            src={`http://localhost:5000${viewUser.icon}`} 
+            src={`https://threedhub-backend.onrender.com${viewUser.icon}`} 
             alt="Avatar" 
             style={{ width: '100px', height: '100px', borderRadius: '50%', objectFit: 'cover', border: '3px solid #3b82f6' }} 
           />
@@ -55,7 +55,7 @@ export default function UserPage() {
             <h3 style={{ margin: '0 0 10px 0', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>{m.title}</h3>
             
             <div style={{ height: '200px', backgroundColor: '#000', borderRadius: '8px', marginBottom: '10px' }}>
-              <ModelViewer url={`http://localhost:5000${m.fileUrl}`} />
+              <ModelViewer url={`https://threedhub-backend.onrender.com${m.fileUrl}`} />
             </div>
             
             <Link to={`/model/${m._id}`}>

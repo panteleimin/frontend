@@ -11,7 +11,7 @@ export default function UpdateUser({ setUser }) {
   const [file, setFile] = useState(null);
 
   useEffect(() => {
-    axios.get(`http://localhost:5000/api/users/${id}`)
+    axios.get(`/api/users/${id}`)
       .then(res => setName(res.data.name || ''));
   }, [id]);
   
@@ -23,7 +23,7 @@ export default function UpdateUser({ setUser }) {
     if (password) formData.append('password', password);
     if (file) formData.append('iconFile', file);
 
-    const res = await axios.put(`http://localhost:5000/api/users/${id}`, formData, {
+    const res = await axios.put(`/api/users/${id}`, formData, {
       headers: { 'Content-Type': 'multipart/form-data' }
     });
  

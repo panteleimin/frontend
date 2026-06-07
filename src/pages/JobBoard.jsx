@@ -12,7 +12,7 @@ export default function JobBoard({ user }) {
 
   const fetchOrders = async () => {
     try {
-      const res = await axios.get('http://localhost:5000/api/orders');
+      const res = await axios.get('/api/orders');
       setOrders(res.data);
     } catch (err) {
       console.error("Error loading orders:", err);
@@ -28,7 +28,7 @@ export default function JobBoard({ user }) {
     if (!user) return alert("Only authorized users can create orders!");
 
     try {
-      await axios.post('http://localhost:5000/api/orders', {
+      await axios.post('/api/orders', {
         title,
         description,
         customerId: user.userId || user._id,
@@ -51,7 +51,7 @@ export default function JobBoard({ user }) {
     if (!user) return alert("Log in to take orders!");
     
     try {
-      await axios.put(`http://localhost:5000/api/orders/${orderId}/take`, {
+      await axios.put(`/api/orders/${orderId}/take`, {
         workerId: user.userId || user._id
       });
       

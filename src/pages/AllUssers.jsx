@@ -6,7 +6,7 @@ export default function AllUsers({ search }) {
   const [users, setUsers] = useState([]);
 
   useEffect(() => {
-    axios.get(`http://localhost:5000/api/users?search=${search}`)
+    axios.get(`/api/users?search=${search}`)
       .then(res => setUsers(res.data))
       .catch(err => console.error(err));
   }, [search]);
@@ -21,7 +21,7 @@ export default function AllUsers({ search }) {
             <div style={{padding: '20px'}}>
                 {u.icon ? (
                     <img 
-                    src={`http://localhost:5000${u.icon}`} 
+                    src={`https://threedhub-backend.onrender.com${u.icon}`} 
                     alt="Аватар" 
                     style={{ width: '220px', height: '220px', borderRadius: '50%', objectFit: 'cover' }} 
                 />) : (

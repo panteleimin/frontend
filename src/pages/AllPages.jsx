@@ -8,7 +8,7 @@ export default function AllPages({ search, user, setUser }) {
   const [models, setModels] = useState([]);
 
   useEffect(() => {
-    axios.get(`http://localhost:5000/api/models?search=${search}`)
+    axios.get(`/api/models?search=${search}`)
       .then(res => setModels(res.data))
       .catch(err => console.error(err));
   }, [search]);
@@ -20,7 +20,7 @@ export default function AllPages({ search, user, setUser }) {
     }
     
     try {
-      const res = await axios.post(`http://localhost:5000/api/users/${user.userId || user._id}/save-model`, {
+      const res = await axios.post(`/api/users/${user.userId || user._id}/save-model`, {
         modelId: modelId
       });
       
@@ -61,7 +61,7 @@ export default function AllPages({ search, user, setUser }) {
                 </button>
                 
                 <div style={{ height: '200px', backgroundColor: '#000', borderRadius: '8px' }}>
-                  <ModelViewer url={`http://localhost:5000${m.fileUrl}`} />
+                  <ModelViewer url={`https://threedhub-backend.onrender.com${m.fileUrl}`} />
                 </div>
                 
                 <p style={{ fontSize: '14px', color: 'gray' }}>{m.description}</p>

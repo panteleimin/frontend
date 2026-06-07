@@ -10,7 +10,7 @@ export default function UpdatePage({ user }) {
   const [file, setFile] = useState(null);
 
   useEffect(() => {
-    axios.get(`http://localhost:5000/api/models/${id}`)
+    axios.get(`/api/models/${id}`)
       .then(res => {
         setTitle(res.data.title || '');
         setDescription(res.data.description || '');
@@ -27,7 +27,7 @@ export default function UpdatePage({ user }) {
     if (user?.userId) formData.append('userId', user.userId); 
 
     try {
-      await axios.put(`http://localhost:5000/api/models/${id}`, formData, {
+      await axios.put(`/api/models/${id}`, formData, {
         headers: { 'Content-Type': 'multipart/form-data' }
       });
       alert('The model has been successfully updated!');
