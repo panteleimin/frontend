@@ -17,6 +17,8 @@ import Footer from './pages/Footer';
 import JobBoard from './pages/JobBoard';
 import { User, House, Sun, Moon, LogOut, LogIn, Users, Earth, Briefcase } from 'lucide-react';
 
+axios.defaults.baseURL = process.env.REACT_APP_API_URL;
+
 function AppContent() {
   const [theme, setTheme] = useState('dark');
   const [search, setSearch] = useState('');
