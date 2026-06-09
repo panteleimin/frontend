@@ -40,7 +40,7 @@ function AppContent() {
   };
 
   return (
-    <div>
+    <div className='page-wrapper'>
       <nav className="navbar" style={{color: 'white', display: 'flex', justifyContent: 'space-between', flexWrap: 'wrap', padding: '15px' }}>
         <div className="nav-group">
           <h3 className='maintext' style={{margin: '0', fontSize: '40px'}}>3D Hub</h3>
