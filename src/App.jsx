@@ -91,6 +91,7 @@ function AppContent() {
           <Route path="/jobs" element={<JobBoard user={user} />} />
         </Routes>
       </main>
+      <Footer/>
     </div>
   );
 }
