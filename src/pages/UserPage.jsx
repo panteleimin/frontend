@@ -37,7 +37,7 @@ export default function UserPage() {
             style={{ width: '100px', height: '100px', borderRadius: '50%', objectFit: 'cover', border: '3px solid #3b82f6' }} 
           />
         ) : (
-          <div style={{ width: '100px', height: '100px', borderRadius: '50%', background: '#475569', display: 'flex', justifyContent: 'center', alignItems: 'center', fontSize: '40px' }}>
+          <div style={{ width: '100px', height: '100px', borderRadius: '50%', background: '#999999', fontSize: '40px' }}>
             <User size='100%' strokeWidth={0.1} fill='white'/>
           </div>
         )}
