@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import axios from 'axios';
 import ModelViewer from '../ModelViewer';
+import { User } from 'lucide-react';
 
 export default function UserPage() {
   const { id } = useParams();
@@ -37,6 +38,7 @@ export default function UserPage() {
           />
         ) : (
           <div style={{ width: '100px', height: '100px', borderRadius: '50%', background: '#475569', display: 'flex', justifyContent: 'center', alignItems: 'center', fontSize: '40px' }}>
+            <User size='100%' strokeWidth={0.1} fill='white'/>
           </div>
         )}
         
