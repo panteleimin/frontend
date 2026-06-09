@@ -75,7 +75,7 @@ function AppContent() {
       </nav>
 
 
-      <Routes>
+      <Routes className="main-content">
         <Route path="/" element={<HomePage />} />
         <Route path="/all" element={<AllPages search={search} user={user} setUser={setUser} />} />
         <Route path="/allusers" element={<AllUssers search={search} />} />

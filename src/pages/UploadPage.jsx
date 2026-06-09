@@ -23,7 +23,11 @@ export default function UploadPage({ user }) {
       alert('The model has been successfully loaded!');
       navigate('/profile');
     } catch (err) {
+      if (err.response && err.response.data && err.response.data.error) {
+      alert(err.response.data.error);
+    } else {
       alert('Upload error!');
+    }
     }
   };
 
