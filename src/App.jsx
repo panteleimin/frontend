@@ -75,21 +75,22 @@ function AppContent() {
       </nav>
 
 
-      <Routes className="main-content">
-        <Route path="/" element={<HomePage />} />
-        <Route path="/all" element={<AllPages search={search} user={user} setUser={setUser} />} />
-        <Route path="/allusers" element={<AllUssers search={search} />} />
-        <Route path="/login" element={<LoginPage setUser={setUser} />} />
-        <Route path="/register" element={<RegisterPage setUser={setUser} />} />
-        <Route path="/profile" element={<ProfilePage user={user} />} />
-        <Route path="/user/:id" element={<UserPage/>} />
-        <Route path="/update/:id" element={<UpdatePage user={setUser} />} />
-        <Route path="/upload" element={<UploadPage user={user} />} />
-        <Route path="/model/:id" element={<ModelProfile />} />
-        <Route path="/update-user/:id" element={<UpdateUser setUser={setUser} />} />
-        <Route path="/jobs" element={<JobBoard user={user} />} />
-      </Routes>
-      <Footer/>
+      <main className="main-content">
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/all" element={<AllPages search={search} user={user} setUser={setUser} />} />
+          <Route path="/allusers" element={<AllUssers search={search} />} />
+          <Route path="/login" element={<LoginPage setUser={setUser} />} />
+          <Route path="/register" element={<RegisterPage setUser={setUser} />} />
+          <Route path="/profile" element={<ProfilePage user={user} />} />
+          <Route path="/user/:id" element={<UserPage/>} />
+          <Route path="/update/:id" element={<UpdatePage user={setUser} />} />
+          <Route path="/upload" element={<UploadPage user={user} />} />
+          <Route path="/model/:id" element={<ModelProfile />} />
+          <Route path="/update-user/:id" element={<UpdateUser setUser={setUser} />} />
+          <Route path="/jobs" element={<JobBoard user={user} />} />
+        </Routes>
+      </main>
     </div>
   );
 }
