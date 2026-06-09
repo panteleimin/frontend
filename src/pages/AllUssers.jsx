@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
+import { User } from 'lucide-react';
 
 export default function AllUsers({ search }) {
   const [users, setUsers] = useState([]);
@@ -25,7 +26,7 @@ export default function AllUsers({ search }) {
                     alt="Аватар" 
                     style={{ width: '220px', height: '220px', borderRadius: '50%', objectFit: 'cover' }} 
                 />) : (
-                    <div style={{width: '220px', height: '220px', borderRadius: '50%', background: '#999999'}}/>
+                    <div style={{width: '220px', height: '220px', borderRadius: '50%', background: '#999999'}}><User size={30} strokeWidth={1.5} color='white' fill='white'/></div>
                 )}
             </div>
             <Link to={`/user/${u._id}`}>
