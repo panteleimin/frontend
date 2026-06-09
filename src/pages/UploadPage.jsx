@@ -33,7 +33,7 @@ export default function UploadPage({ user }) {
 
   return (
     <div style={{ padding: '20px', maxWidth: '500px', margin: '0 auto' }}>
-      <h2>Download new 3D Model (.glb)</h2>
+      <h2>Upload new 3D Model (.glb)</h2>
       <form onSubmit={handleUpload} style={{ display: 'flex', flexDirection: 'column', gap: '15px' }}>
         <input type="text" placeholder="Model name" onChange={e => setTitle(e.target.value)} required style={{ padding: '10px' }}/>
         <input type="text" placeholder="Description" onChange={e => setDescription(e.target.value)} style={{ padding: '10px' }} />
