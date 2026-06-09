@@ -31,7 +31,7 @@ export default function UserPage() {
       <div style={{ display: 'flex', alignItems: 'center', gap: '20px', marginBottom: '20px', padding: '20px'}}>
         {viewUser.icon ? (
           <img 
-            src={`https://threedhub-backend.onrender.com${viewUser.icon}`} 
+            src={viewUser.icon} 
             alt="Avatar" 
             style={{ width: '100px', height: '100px', borderRadius: '50%', objectFit: 'cover', border: '3px solid #3b82f6' }} 
           />
@@ -55,7 +55,7 @@ export default function UserPage() {
             <h3 style={{ margin: '0 0 10px 0', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>{m.title}</h3>
             
             <div style={{ height: '200px', backgroundColor: '#000', borderRadius: '8px', marginBottom: '10px' }}>
-              <ModelViewer url={`https://threedhub-backend.onrender.com${m.fileUrl}`} />
+              <ModelViewer url={m.fileUrl} />
             </div>
             
             <Link to={`/model/${m._id}`}>

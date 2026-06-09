@@ -61,7 +61,7 @@ export default function AllPages({ search, user, setUser }) {
                 </button>
                 
                 <div style={{ height: '200px', backgroundColor: '#000', borderRadius: '8px' }}>
-                  <ModelViewer url={`https://threedhub-backend.onrender.com${m.fileUrl}`} />
+                  <ModelViewer url={m.fileUrl} />
                 </div>
                 
                 <p style={{ fontSize: '14px', color: 'gray' }}>{m.description}</p>

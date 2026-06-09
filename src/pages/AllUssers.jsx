@@ -21,7 +21,7 @@ export default function AllUsers({ search }) {
             <div style={{padding: '20px'}}>
                 {u.icon ? (
                     <img 
-                    src={`https://threedhub-backend.onrender.com${u.icon}`} 
+                    src={u.icon} 
                     alt="Аватар" 
                     style={{ width: '220px', height: '220px', borderRadius: '50%', objectFit: 'cover' }} 
                 />) : (

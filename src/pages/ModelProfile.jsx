@@ -22,7 +22,7 @@ export default function ModelProfile() {
         <div style={{ padding: '30px', display: 'flex', flexDirection: 'column', gap: '30px' }}>
           <div style={{ height: '550px', background: '#000', borderRadius: '12px', overflow: 'hidden', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
             {model?.fileUrl ? (
-              <ModelViewer url={`https://threedhub-backend.onrender.com${model.fileUrl}`} />
+              <ModelViewer url={model.fileUrl} />
             ) : (
               <h2 style={{ color: '#ef4444' }}>3D model file is missing</h2>
             )}
@@ -37,7 +37,7 @@ export default function ModelProfile() {
           </div>
           {model?.fileUrl && (
             <a 
-              href={`https://threedhub-backend.onrender.com${model.fileUrl}`} 
+              href={model.fileUrl} 
               download
               style={{
                 display: 'block', textAlign: 'center', padding: '16px', borderRadius: '12px',

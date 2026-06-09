@@ -18,7 +18,7 @@ import JobBoard from './pages/JobBoard';
 import { User, House, Sun, Moon, LogOut, LogIn, Users, Earth, Briefcase } from 'lucide-react';
 import axios from 'axios';
 
-axios.defaults.baseURL = 'https://threedhub-backend.onrender.com';
+axios.defaults.baseURL = 'https://threedhub-backend-k5ze.onrender.com';
 
 function AppContent() {
   const [theme, setTheme] = useState('dark');

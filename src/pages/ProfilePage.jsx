@@ -81,7 +81,7 @@ export default function ProfilePage({ user }) {
       
       <div style={{ display: 'flex', alignItems: 'center', gap: '20px', marginBottom: '30px' }}>
         {user.icon ? (
-          <img src={`https://threedhub-backend.onrender.com${user.icon}`} alt="Avatar" style={{ width: '100px', height: '100px', borderRadius: '50%', objectFit: 'cover' }} />
+          <img src={user.icon} alt="Avatar" style={{ width: '100px', height: '100px', borderRadius: '50%', objectFit: 'cover' }} />
         ) : (
           <div style={{ width: '100px', height: '100px', borderRadius: '50%', background: '#616161', display: 'flex', justifyContent: 'center', alignItems: 'center' }}/>
         )}
@@ -152,7 +152,7 @@ export default function ProfilePage({ user }) {
                   <h3 style={{ margin: '0 0 10px 0', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>{m.title}</h3>
               
                   <div style={{ height: '200px', backgroundColor: '#000', borderRadius: '8px', marginBottom: '10px' }}>
-                    <ModelViewer url={`https://threedhub-backend.onrender.com${m.fileUrl}`} />
+                    <ModelViewer url={m.fileUrl} />
                   </div>
               
                   <div style={{display: 'flex', justifyContent: 'space-between'}}>
@@ -233,12 +233,12 @@ export default function ProfilePage({ user }) {
                       
                       <div style={{ marginLeft: 'auto', display: 'flex', gap: '10px' }}>
                         {order.glbFileUrl && (
-                          <a href={`https://threedhub-backend.onrender.com${order.glbFileUrl}`} download>
+                          <a href={order.glbFileUrl} download>
                             <button style={{ display: 'flex', alignItems: 'center', gap: '5px', background: '#475569', color: 'white', border: 'none', padding: '6px 12px', borderRadius: '5px', cursor: 'pointer' }}><Download size={14}/> .glb</button>
                           </a>
                         )}
                         {order.fbxFileUrl && (
-                          <a href={`https://threedhub-backend.onrender.com${order.fbxFileUrl}`} download>
+                          <a href={order.fbxFileUrl} download>
                             <button style={{ display: 'flex', alignItems: 'center', gap: '5px', background: '#475569', color: 'white', border: 'none', padding: '6px 12px', borderRadius: '5px', cursor: 'pointer' }}><Download size={14}/> .fbx</button>
                           </a>
                         )}
