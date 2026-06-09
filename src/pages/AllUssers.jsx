@@ -26,7 +26,7 @@ export default function AllUsers({ search }) {
                     alt="Аватар" 
                     style={{ width: '220px', height: '220px', borderRadius: '50%', objectFit: 'cover' }} 
                 />) : (
-                    <div style={{width: '220px', height: '220px', borderRadius: '50%', background: '#999999'}}><User size='100%' strokeWidth={1.5} fill='white'/></div>
+                    <div style={{width: '220px', height: '220px', borderRadius: '50%', background: '#999999'}}><User size='100%' strokeWidth={0.1} fill='white'/></div>
                 )}
             </div>
             <Link to={`/user/${u._id}`}>
