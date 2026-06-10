@@ -83,7 +83,9 @@ export default function ProfilePage({ user }) {
         {user.icon ? (
           <img src={user.icon} alt="Avatar" style={{ width: '100px', height: '100px', borderRadius: '50%', objectFit: 'cover' }} />
         ) : (
-          <div style={{ width: '100px', height: '100px', borderRadius: '50%', background: '#616161', display: 'flex', justifyContent: 'center', alignItems: 'center' }}/>
+          <div style={{ width: '100px', height: '100px', borderRadius: '50%', background: '#999999', fontSize: '40px' }}>
+            <User size='100%' strokeWidth={0.1} fill='white'/>
+          </div>
         )}
         
         <div>
